@@ -1,0 +1,48 @@
+{
+  "name": "cortico-world-tavily",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Cortico World: web search through Tavily. Exposes the tavily_search tool so the bot can look up the live web and cite results.",
+  "author": "Pal AI Lab",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pal-AI-Lab/Coopanion.git",
+    "directory": "packages/cortico-world-tavily"
+  },
+  "homepage": "https://github.com/Pal-AI-Lab/Coopanion/tree/main/packages/cortico-world-tavily#readme",
+  "bugs": {
+    "url": "https://github.com/Pal-AI-Lab/Coopanion/issues"
+  },
+  "keywords": [
+    "cortico-world",
+    "cortico",
+    "web-search"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@11.28.62",
+  "main": "./src/index.ts",
+  "cortico": {
+    "kind": "world",
+    "api": 6,
+    "describe": "describe.json"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "describe.json"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "cortico": "^0.2.16",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

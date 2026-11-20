@@ -1,0 +1,44 @@
+{
+  "tools": [
+    {
+      "name": "tavily_search",
+      "description": "Search the live web with Tavily and return results with titles, URLs and snippets.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The search query."
+          },
+          "max_results": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10,
+            "default": 5,
+            "description": "Maximum number of results to return."
+          }
+        },
+        "required": ["query"]
+      },
+      "tags": ["read"],
+      "summary": {
+        "zh": "用 Tavily 搜索联网,带标题、链接和摘要返回结果。",
+        "en": "Searches the live web with Tavily, returning results with titles, URLs and snippets."
+      }
+    }
+  ],
+  "events": [
+    {
+      "type": "tavily.started",
+      "description": {
+        "zh": "世界已挂载。",
+        "en": "The world was mounted."
+      }
+    }
+  ],
+  "summary": {
+    "zh": "Tavily 网页搜索世界，提供 tavily_search 工具。",
+    "en": "Tavily web-search world, providing the tavily_search tool."
+  }
+}
