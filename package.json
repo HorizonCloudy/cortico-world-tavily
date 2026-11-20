@@ -7,12 +7,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Pal-AI-Lab/Coopanion.git",
-    "directory": "packages/cortico-world-tavily"
+    "url": "https://github.com/HorizonCloudy/cortico-world-tavily.git"
   },
-  "homepage": "https://github.com/Pal-AI-Lab/Coopanion/tree/main/packages/cortico-world-tavily#readme",
+  "homepage": "https://github.com/HorizonCloudy/cortico-world-tavily#readme",
   "bugs": {
-    "url": "https://github.com/Pal-AI-Lab/Coopanion/issues"
+    "url": "https://github.com/HorizonCloudy/cortico-world-tavily/issues"
   },
   "keywords": [
     "cortico-world",
@@ -22,16 +21,21 @@
   "engines": {
     "node": ">=22"
   },
-  "packageManager": "pnpm@11.28.62",
+  "packageManager": "pnpm@11.28.6",
   "main": "./src/index.ts",
   "cortico": {
     "kind": "world",
     "api": 6,
-    "describe": "describe.json"
+    "describe": "describe.json",
+    "tags": [
+      "internet",
+      "requires-key"
+    ]
   },
   "files": [
     "src",
     "README.md",
+    "CHANGELOG.md",
     "describe.json"
   ],
   "scripts": {

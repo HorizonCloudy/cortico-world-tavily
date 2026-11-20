@@ -19,9 +19,13 @@
             "description": "Maximum number of results to return."
           }
         },
-        "required": ["query"]
+        "required": [
+          "query"
+        ]
       },
-      "tags": ["read"],
+      "tags": [
+        "read"
+      ],
       "summary": {
         "zh": "用 Tavily 搜索联网,带标题、链接和摘要返回结果。",
         "en": "Searches the live web with Tavily, returning results with titles, URLs and snippets."
@@ -37,8 +41,12 @@
       }
     }
   ],
-  "summary": {
-    "zh": "Tavily 网页搜索世界，提供 tavily_search 工具。",
-    "en": "Tavily web-search world, providing the tavily_search tool."
-  }
+  "prompts": [
+    {
+      "key": "worlds.tavily.envPrompt",
+      "title": "Tavily 环境提示",
+      "role": "envPrompt",
+      "content": "# Tavily 环境提示\n\n你有一个联网搜索工具 `tavily_search`，可把 Tavily 搜索到的网页结果以标题、链接和摘要的形式带回来。\n\n## 什么时候调用\n\n- 只在当前轮次里已有的信息不足以回答时才调用；问题本身能答就不要搜。\n- 要查近期事实、不确定的数字、或可能已过时的内容时调用。\n- 不要为闲聊、常识或已在上下文里的内容搜索。\n\n## 结果怎么引用\n\n把每条结果的标题和链接贴在回答里，让对方能点开看原文。摘要只用于概括，不要把摘要当原文断章取义。\n\n## 不要滥用\n\n一次调用最多返回 10 条结果，不必反复搜同一件事。搜不到就换个更具体的词再试一次，不要连续多次重复相同的查询。\n\n## 用户问\"怎么配密钥\"时\n\n直接按下文回答用户，**不要为此搜索代码、不要调用 grep_files 或任何文件/搜索工具、不要尝试自己查证路径**——路径已经在这里给出，照抄即可：\n\n密钥文件路径：`{{tavily.envFile}}`。告诉用户：在这个文件里加一行 `TAVILY_API_KEY=你的密钥`（一行一个，等号后不要有空格，不要加引号），保存后下一次调用就生效，不用重启。密钥不要发给你，也不要填进配置面板。\n"
+    }
+  ]
 }

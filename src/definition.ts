@@ -13,9 +13,10 @@ export function tavilyDefinition(): WorldDefinition<TavilyConfigSection> {
       cfg: ctx.cfg,
       timezone: ctx.timezone,
       getApiKey: () => ctx.secret('TAVILY_API_KEY'),
+      botDir: ctx.botDir,
     }),
     describe: {
-      tools: describeTools(TOOL_DECLS as never, {
+      tools: describeTools(TOOL_DECLS, {
         tavily_search: {
           zh: '用 Tavily 搜索联网,带标题、链接和摘要返回结果。',
           en: 'Searches the live web with Tavily, returning results with titles, URLs and snippets.',
